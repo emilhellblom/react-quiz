@@ -1,82 +1,37 @@
 export const allQuestions = [
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
+    question: "Is React a framework or a library?",
+    answers: ["Framework", "Library"],
+    correct: "Library"
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
+    question: "Which company created React?",
+    answers: ["Google", "Facebook", "Amazon", "Microsoft"],
+    correct: "Facebook"
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
+    question: "What is the name of the syntax that's often used in React apps?",
+    answers: ["ReactHTML", "HTML", "JSX", "ReactJSX"],
+    correct: "JSX"
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
+    question: "What can be built with React?",
+    answers: ["Only websites", "Websites and native apps", "Only native apps"],
+    correct: "Websites and native apps"
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
+    question: "Which of the following is a React lifecycle method?",
+    answers: ["shouldComponentReceiveProps", "componentDidUnmount", "shouldComponentUpdate", "didComponentUpdate"],
+    correct: "shouldComponentUpdate"
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui.",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
+    question: "In which lifecycle methods should you NOT set state?",
+    answers: ["constructor", "componentDidMount", "componentWillReceiveProps"],
+    correct: "constructor"
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. ",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
+    question: "How does React render to the HTML DOM?",
+    answers: ["React.render()", "React.DOM()", "ReactDOM.render()", "DOM.render()"],
+    correct: "ReactDOM.render()"
   },
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. ",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
-  },
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. ",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
-  },
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. ",
-    answerA: "Hello",
-    answerB: "Sup",
-    answerC: "Well",
-    answerD: "One",
-    correct: "Sup"
-  }
 ]
