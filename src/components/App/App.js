@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
 import '../App.css';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import Card from '../Cards/Card.js';
 import { allQuestions } from '../../data/Questions';
 import { Answers } from '../Cards/Options';
 import Results from '../ResultPage/ResultPage';
 import LandingPage from '../LandingPage/LandingPage';
+import {connect} from 'react-redux'
+import {addCorrectAnswer, addIncorrectAnswer} from '../../actions/results'
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
+    state = {
       activeIndex: 0,
       correctAnswers: [],
       wrongAnswers: [],
       landingPage: true,
     }
-  }
+
 
   increaseActiveIndex = (event) => {
-    (event.target.value === allQuestions[this.state.activeIndex].correct) ?
-    this.setState({ correctAnswers: [...this.state.correctAnswers, this.state.activeIndex] }) :
-    this.setState({ wrongAnswers: [...this.state.wrongAnswers, this.state.activeIndex] });
+    const { addCorrectAnswer, addIncorrectAnswer } = this.props
+    if (event.target.value === allQuestions[this.state.activeIndex].correct) {
+    addCorrectAnswer([...this.state.correctAnswers, allQuestions[this.state.activeIndex]])
+    } else {
+    addIncorrectAnswer([...this.state.wrongAnswers, allQuestions[this.state.activeIndex]]);
+    }
     this.setState({ activeIndex: this.state.activeIndex + 1 });
   }
 
@@ -57,4 +60,12 @@ class App extends Component {
   }
 }
 
-export default App;
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addCorrectAnswer: () => dispatch(addCorrectAnswer()),
+//     addIncorrectAnswer: () => dispatch(addIncorrectAnswer())
+
+//   }
+// }
+
+export default connect(null, {addCorrectAnswer, addIncorrectAnswer})(App);
