@@ -7,13 +7,11 @@ import { Answers } from '../Cards/Options';
 import Results from '../ResultPage/ResultPage';
 import LandingPage from '../LandingPage/LandingPage';
 import {connect} from 'react-redux'
-import {addCorrectAnswer, addIncorrectAnswer} from '../../actions/results'
+import {addCorrectAnswer, addIncorrectAnswer, resetGame} from '../../actions/results'
 
 class App extends Component {
     state = {
       activeIndex: 0,
-      correctAnswers: [],
-      wrongAnswers: [],
       landingPage: true,
     }
 
@@ -21,23 +19,23 @@ class App extends Component {
   increaseActiveIndex = (event) => {
     const { addCorrectAnswer, addIncorrectAnswer } = this.props
     if (event.target.value === allQuestions[this.state.activeIndex].correct) {
-    addCorrectAnswer([...this.state.correctAnswers, allQuestions[this.state.activeIndex]])
+    addCorrectAnswer([allQuestions[this.state.activeIndex]])
     } else {
-    addIncorrectAnswer([...this.state.wrongAnswers, allQuestions[this.state.activeIndex]]);
+    addIncorrectAnswer([allQuestions[this.state.activeIndex]]);
     }
     this.setState({ activeIndex: this.state.activeIndex + 1 });
   }
 
   resetQuiz = () => {
+    this.props.resetGame()
     this.setState({
       activeIndex: 0,
-      correctAnswers: [],
-      wrongAnswers: [],
     });
   }
 
   render() {
     // Return landing page.
+    console.log(this.props)
     return (this.state.landingPage) ? <LandingPage onClick={ () => this.setState({ landingPage: false }) } /> :
     // Show questions.
     (allQuestions.length > this.state.activeIndex) ? 
@@ -53,19 +51,18 @@ class App extends Component {
     <div>
       <Results
         allQuestions={ allQuestions }
-        correctAnswers={ this.state.correctAnswers }
-        wrongAnswers={ this.state.wrongAnswers } />
+        correctAnswers={ this.props.correct }
+        wrongAnswers={ this.props.incorrect } />
       <button onClick={ this.resetQuiz }> Reset </button>
     </div>
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addCorrectAnswer: () => dispatch(addCorrectAnswer()),
-//     addIncorrectAnswer: () => dispatch(addIncorrectAnswer())
+const mapStateToProps = (state) => {
+  return {
+    correct: state.correct,
+    incorrect: state.incorrect
+  }
+}
 
-//   }
-// }
-
-export default connect(null, {addCorrectAnswer, addIncorrectAnswer})(App);
+export default connect(mapStateToProps, {addCorrectAnswer, addIncorrectAnswer, resetGame})(App);

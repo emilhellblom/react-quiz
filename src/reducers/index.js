@@ -3,5 +3,5 @@ import {incorrect} from './incorrect'
 
 export default {
     correct,
-    incorrect
+    incorrect,
 }

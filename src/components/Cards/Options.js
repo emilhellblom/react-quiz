@@ -11,6 +11,6 @@ const Button = ({ onClick, answer}) => (
 
 export const Answers = ({ increaseActiveIndex, allQuestions, index }) => (
   allQuestions[index].answers.map(answer => 
-     <Button answer={ answer } onClick={ increaseActiveIndex } />
+     <Button key={answer} answer={ answer } onClick={ increaseActiveIndex } />
   )
 );
